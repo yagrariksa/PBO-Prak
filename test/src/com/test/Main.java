@@ -1,75 +1,44 @@
 package com.test;
 
-class Hewan {
+class Bola{
+	private Integer jari;
+	private Integer luas;
 
-    private String nama;
-    private Integer jumlah_kaki;
-    private String habitat;
-    private String tipe_pemakan;
-    private Integer energi;
-    public String nickname;
+	Bola(Integer x){
+		this.jari = x;
+	}
 
-    Hewan() {
-        this.energi = 100;
-    }
+	public Integer getJari(){
+		return this.jari;
+	}
 
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
+	public Integer luas(){
+		this.luas = this.jari*this.jari*22/7;
+		return this.luas;
+	}
 
-    public void setJumlah_kaki(Integer jumlah_kaki) {
-        this.jumlah_kaki = jumlah_kaki;
-    }
+	public void tampil(){
+		System.out.println("jari : " + this.jari);
+		System.out.println("luas : " + this.luas());
+	}
 
-    public void setHabitat(String habitat) {
-        this.habitat = habitat;
-    }
-
-    public void setTipe_pemakan(String tipe_pemakan) {
-        this.tipe_pemakan = tipe_pemakan;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public Integer getJumlah_kaki() {
-        return jumlah_kaki;
-    }
-
-    public String getHabitat() {
-        return habitat;
-    }
-
-    public String getTipe_pemakan() {
-        return tipe_pemakan;
-    }
-
-    public void makan(){
-        System.out.println(this.nama + " sedang makan");
-        this.energi = this.energi + 5;
-    }
-
-    public void tidur(){
-        System.out.println(this.nama + " sedang tidur");
-        this.energi = this.energi + 5;
-    }
-
-    public void berinteraksi(){
-        System.out.println(this.nama + " sedang berinteraksi");
-        this.energi = this.energi - 5;
-        System.out.println("energi " + this.nama +  " : "+ this.energi);
-    }
+	public void jumlahJ(Bola x){
+		Integer hasil = this.jari + x.getJari();
+		// write your code here
+		System.out.println("hasil jumlah adalah : " + hasil);
+	}
 }
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Hewan kucing = new Hewan();
-        kucing.setNama("kucing lucu");
-        kucing.setJumlah_kaki(4);
-        kucing.setHabitat("darat");
+	
+	Bola b1 = new Bola(7);
+	b1.tampil();
 
-        kucing.berinteraksi();
+	Bola b2 = new Bola(14);
+	b2.tampil();
+
+	b1.jumlahJ(b2);
     }
 }

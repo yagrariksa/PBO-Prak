@@ -33,6 +33,10 @@ class Pecahan {
         Pecahan satu = new Pecahan(finalPembilang, finalPenyebut);
         return satu;
     }
+
+    public void tampil(){
+        System.out.println("bilangan pecahan : " + this.pembilang + "/" + this.penyebut);
+    }
 }
 public class Main {
 
@@ -42,5 +46,9 @@ public class Main {
         Pecahan Objek2 = new Pecahan(5,6);
 
         Pecahan Objek3 = Objek1.tambah(Objek2);
+
+        Objek1.tampil();
+        Objek2.tampil();
+        Objek3.tampil();
     }
 }
