@@ -291,28 +291,5 @@ public class Main {
         conan.totalhargabeli();
         conan.totalhargajual();
 
-/*
-        Buku bukusatu = new Buku(
-                "conan mencari domba",
-                "eichiro oda",
-                "Conan menggembala namun domba nya hilang secara misterius",
-                2018,100000
-        );
-
-        Buku bukudua = new Buku(
-                "conan jalan-jalan ke jepang",
-                "eichiro Soda",
-                "conan liburan musim panas liburan ke jepang bersama teman dan sahabat",
-                2015, 80000
-        );
-
-        Buku bukuketiga = new Buku(
-                "conan mencari jejak",
-                "Haciro Omda",
-                "anjing tetangga conan hilang misterius, conan mencari nya segera",
-                2016,90000
-        );
- */
-
     }
 }
