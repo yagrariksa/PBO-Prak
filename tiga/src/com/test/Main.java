@@ -24,19 +24,59 @@ class GameCharacter{
     }
 
     public void hit(GameCharacter b){
-        System.out.println(this.getName() + " memukul " + b.getName());
-        b.damage(this.attackHitPoint);
+        if ( b == this ){
+            System.out.println("tidak bisa melukai diri sendiri");
+        }else if (b.die()){
+            System.out.println(b.getName() + ":: musuh sudah mati, tidak bisa dikenai aksi");
+        }else if(this.die()){
+            System.out.println(this.getName() + ":: anda sudah mati, tidak bisa melakukan aksi");
+        }else{
+            System.out.println(this.getName() + " memukul " + b.getName());
+            b.damage(this.attackHitPoint);
+        }
     }
 
     public void kick(GameCharacter b){
-        System.out.println(this.getName() + " menendang " + b.getName());
-        b.damage(this.attackKickPoint);
+        if ( b == this ){
+            System.out.println("tidak bisa melukai diri sendiri");
+        }else if (b.die()){
+            System.out.println(b.getName() + ":: musuh sudah mati, tidak bisa dikenai aksi");
+        }else if(this.die()){
+            System.out.println(this.getName() + ":: anda sudah mati, tidak bisa melakukan aksi");
+        }else{
+            System.out.println(this.getName() + " menendang " + b.getName());
+            b.damage(this.attackKickPoint);
+        }
     }
 
     @Override
     public String toString() {
         return "name='" + name + '\'' + "\n" +
                 "lifePoint=" + lifePoint + "\n";
+    }
+
+    public boolean die(){
+        if ( this.getLifePoint() <= 0 ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public void compare(GameCharacter b){
+        int selisih;
+        if (this.getLifePoint() > b.getLifePoint()){
+            selisih = this.getLifePoint() - b.getLifePoint();
+            System.out.println("selisih nyawa : " + selisih);
+            System.out.println("winner : " + this.getName());
+        }else if(this.getLifePoint() < b.getLifePoint()){
+            selisih = b.getLifePoint() - this.getLifePoint();
+            System.out.println("selisih nyawa : " + selisih);
+            System.out.println("winner : " + b.getName());
+        }else{
+            System.out.println("selisih nyawa : 0");
+            System.out.println("seri");
+        }
     }
 }
 
@@ -56,19 +96,24 @@ public class Main {
         for (int i=0;i<4;i++){
             raiden.kick(subzero);
         }
+        subzero.hit(raiden);
+        raiden.kick(subzero);
+        raiden.hit(raiden);
         System.out.println("PERTARUNGAN BERAKHIR");
 
         System.out.println("\n" + raiden + "\n" + subzero);
 
+        raiden.compare(subzero);
 
-        if(raiden.getLifePoint() > subzero.getLifePoint()){
-            int selisih = raiden.getLifePoint() - subzero.getLifePoint();
-            System.out.println("selisih nyawa : " + selisih);
-            System.out.println("winner : " + raiden.getName());
-        }else {
-            int selisih = subzero.getLifePoint() - raiden.getLifePoint();
-            System.out.println("selisih nyawa : " + selisih);
-            System.out.println("winner : " + subzero.getName());
-        }
+        
+//        if(raiden.getLifePoint() > subzero.getLifePoint()){
+//            int selisih = raiden.getLifePoint() - subzero.getLifePoint();
+//            System.out.println("selisih nyawa : " + selisih);
+//            System.out.println("winner : " + raiden.getName());
+//        }else {
+//            int selisih = subzero.getLifePoint() - raiden.getLifePoint();
+//            System.out.println("selisih nyawa : " + selisih);
+//            System.out.println("winner : " + subzero.getName());
+//        }
     }
 }
