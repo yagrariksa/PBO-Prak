@@ -1,10 +1,13 @@
 package com.test;
 
+import javax.management.StringValueExp;
+
 class Pecahan {
 
     private Integer pembilang;
     private Integer penyebut = 1;
     private boolean error = false;
+    private boolean zero = false;
 
     Pecahan(Integer pembilang){
         this.setPembilang(pembilang);
@@ -20,6 +23,9 @@ class Pecahan {
     }
 
     public void setPembilang(Integer pembilang) {
+        if (pembilang == 0){
+            zero = true;
+        }
         this.pembilang = pembilang;
     }
 
@@ -37,6 +43,10 @@ class Pecahan {
 
     public Integer getPenyebut() {
         return this.penyebut;
+    }
+
+    public boolean isZero() {
+        return zero;
     }
 
     public Integer efpebe(Integer a, Integer b){
@@ -61,31 +71,40 @@ class Pecahan {
             Integer finalDua = pecahan.getPembilang()*this.penyebut;
             Integer finalPembilang = finalSatu+finalDua;
 
+            Pecahan satu = new Pecahan(finalPembilang, finalPenyebut);
+
             System.out.println(
-                    this.pembilang + "/" + this.penyebut +
-                    " + " + pecahan.getPembilang() + "/" + pecahan.getPenyebut() +
-                    " = " + finalPembilang + "/" + finalPenyebut
+                    this.toString() + " + " + pecahan.toString() +
+                    " = " + satu.toString()
             );
 
             Integer efpebe = efpebe(finalPembilang, finalPenyebut);
-            if(efpebe != 1) {
+            if(efpebe != 1 && !satu.isZero()) {
                 finalPembilang = finalPembilang / efpebe;
                 finalPenyebut = finalPenyebut / efpebe;
+                satu = new Pecahan(finalPembilang, finalPenyebut);
 
                 System.out.println(
-                        this.pembilang + "/" + this.penyebut +
-                                " + " + pecahan.getPembilang() + "/" + pecahan.getPenyebut() +
-                                " = " + finalPembilang + "/" + finalPenyebut
+                        this.toString() + " + " + pecahan.toString() +
+                        " = " + satu.toString()
                 );
             }
 
-            Pecahan satu = new Pecahan(finalPembilang, finalPenyebut);
             return satu;
         }
     }
 
+    @Override
+    public String toString() {
+        if (zero){
+            return this.pembilang + " ";
+        }else {
+            return this.pembilang + "/" + this.penyebut ;
+        }
+    }
+
     public void tampil(){
-        System.out.println("bilangan pecahan : " + this.pembilang + "/" + this.penyebut);
+        System.out.println("bilangan pecahan : " + this.toString());
     }
 }
 public class Main {
@@ -93,7 +112,7 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         Pecahan Objek1 = new Pecahan(3,2);
-        Pecahan Objek2 = new Pecahan(5,6);
+        Pecahan Objek2 = new Pecahan(-8,4);
 
         Pecahan Objek3 = Objek1.tambah(Objek2);
 
