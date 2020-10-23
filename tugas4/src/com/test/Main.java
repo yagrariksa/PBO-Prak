@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 class Vektor {
-    public Scanner sc = new Scanner(System.in);
+     public Scanner sc = new Scanner(System.in);
     private final ArrayList<Double> vektor = new ArrayList<Double>();
 
     public Vektor(int n){

@@ -1,0 +1,37 @@
+Array x = {2,3,4,5}
+x.push x.add
+2,3,4,5,....,x
+
+ArrayList b = {}
+b.add()
+{value} <- b
+
+cara penulisan :
+private		Array		x = {}
+access modifier	Tipe Data	namaVar dan isinya
+-> jika dia adalah array maka ukuran datanya tidak bisa berubah.
+-> namun value nya bisa berubah
+contoh	-> jika a = {2,3,4}
+	-> ubah a[1] = 10
+	-> sout(a[i]);
+	-> x.length()
+
+private		ArrayList	<data-type>	x =	new ArrayList<data-type> ();
+access modifier	TipeData	TipeData	namaVar	deklarasi
+
+contoh	-> private ArrayList<String> x = new ArrayList<String>(); // {}
+	-> x.add("string asd"); 
+	-> x.get(0);
+	-> x.
+	-> x.size();
+
+'method' , 'argumen', 'parameter'
+array.method list on GOogle -> 
+
+private Array vektor = { 0,0,0 }
+constructor (){
+	vektor[0] = a;
+	[1] = b;
+	[2] = c;
+}
+constructor (a,b)
