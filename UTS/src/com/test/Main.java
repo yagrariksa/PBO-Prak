@@ -11,7 +11,7 @@ public class Main {
         DaftarGaji datamaster = new DaftarGaji();
 
 //        mengatur kehadiran putu (5 kehadiran) dan Tarif Harian (100.000)
-        putu.setJumlahKehadiran(5);y
+        putu.setJumlahKehadiran(5);
         putu.setTARIF_HARIAN(100000);
 
 //        mengatur jumlah sks Dharmadi (30 sks) dan Tarif per SKS (30.000)
