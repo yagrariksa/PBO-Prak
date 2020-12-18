@@ -82,25 +82,23 @@ class Pecahan {
 }
 public class Main {
 
+    private static class Bahasa{
+        public String lang;
+
+        public String getLang() {
+            return lang;
+        }
+
+        public void setLang(String lang) {
+            this.lang = lang;
+        }
+    }
+
     public static void main(String[] args) {
-	// write your code here
 
-//        Bola b1 = new Bola(7);
-//        b1.tampil();
-//
-//        Bola b2 = new Bola(14);
-//        b2.tampil();
-//
-//        b1.jumlahJ(b2);
+        Bahasa bahasa = new Bahasa();
+        bahasa.setLang("Java");
+        System.out.println("Bahasa : " + bahasa.getLang());
 
-        Pecahan a = new Pecahan(3,2);
-        Pecahan b = new Pecahan(5,6);
-//        a.tampil();
-//        b.tampil();
-        Pecahan sum;
-        sum = a.tambah(b);
-        System.out.println(a + " + " + b + " = " + sum);
-
-//        Integer somethin = 10/0;
     }
 }
