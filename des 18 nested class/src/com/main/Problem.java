@@ -25,7 +25,6 @@ public class Problem {
         Main.AccessibleBox a = m.new AccessibleBox();
         Dimension d = new Dimension(100,100);
         new Box.Filler(d,d,d);
-        new Main.Filler(d,d,d).hush();
 
 //        Main m = new Main(2);
 //        Main.AccessibleBox a = m.new AccessibleBox();

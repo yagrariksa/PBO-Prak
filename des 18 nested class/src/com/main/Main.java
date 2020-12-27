@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Main extends Box {
-    static Box.Filler b;
+    Box.Filler b;
 
     public Main(int axis) {
         super(axis);
@@ -13,8 +13,10 @@ public class Main extends Box {
 
     public static void main(String[] args) {
         Dimension d = new Dimension(100,100);
-        b = new Box.Filler(d,d,d); // cara satu
-        b = new Filler(d,d,d); // cara dua
+        Main m = new Main(2);
+        m.b = new Box.Filler(d,d,d);
+//        b = new Box.Filler(d,d,d); // cara satu
+//        b = new Filler(d,d,d); // cara dua
         // write your code here
 //        Filler f = new Filler(
 //                new Dimension(100,100),

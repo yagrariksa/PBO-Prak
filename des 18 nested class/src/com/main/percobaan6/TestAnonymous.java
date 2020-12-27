@@ -2,15 +2,19 @@ package com.main.percobaan6;
 
 public class TestAnonymous {
     public static void main(String str[]){
-        final int d = 10;
 
-        TestAnonymous t = new TestAnonymous();
-        Father f = t.new Father();
+        Father f = new Father() {
+            @Override
+            public void method(int x) {
+                System.out.println("hello world");
+            }
+        };
 
 
     }
 
-    class Father {
+    interface Father {
+        void method(int x);
 
     }
 }

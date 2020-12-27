@@ -3,7 +3,7 @@ package com.main.percobaan3;
 public class TestStaticInnerClass1 {
 
     static String test = "Outer class static field";
-    String instFld = "This is an instance field";
+    static String instFld = "This is an instance field";
 
     public static void main(String[] args){
         System.out.println(Inner.value);
@@ -16,7 +16,7 @@ public class TestStaticInnerClass1 {
         Inner() {
             System.out.println("New static inner class");
             System.out.println(test);
-            // System.out.println(instFld); tidak bisa
+             System.out.println(instFld);
             TestStaticInnerClass1 tsi = new TestStaticInnerClass1();
             System.out.println(tsi.instFld);
         }
